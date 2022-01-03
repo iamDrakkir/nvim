@@ -7,11 +7,8 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-
-    prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
-
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
@@ -78,13 +75,20 @@ telescope.setup {
     },
   },
   pickers = {
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
+    -- Your special builtin config goes in here
+    buffers = {
+      sort_lastused = true,
+      previewer = false,
+      theme = "dropdown",
+      mappings = {
+        i = {
+          ["<C-d>"] = require("telescope.actions").delete_buffer,
+        },
+        n = {
+          ["<c-d>"] = require("telescope.actions").delete_buffer,
+        }
+      }
+    },
   },
   extensions = {
     -- Your extension configuration goes here:
