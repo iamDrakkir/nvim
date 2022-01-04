@@ -77,7 +77,7 @@ _G.packer_plugins = {
   ["a.vim"] = {
     loaded = true,
     path = "/home/drakkir/.local/share/nvim/site/pack/packer/start/a.vim",
-    url = "https://github.com/vim-scripts/a.vim"
+    url = "https://github.com/nacitar/a.vim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -149,20 +149,10 @@ _G.packer_plugins = {
     path = "/home/drakkir/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-ts-rainbow"] = {
-    loaded = true,
-    path = "/home/drakkir/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
-    url = "https://github.com/p00f/nvim-ts-rainbow"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/drakkir/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
-  },
-  playground = {
-    loaded = true,
-    path = "/home/drakkir/.local/share/nvim/site/pack/packer/start/playground",
-    url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -178,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/drakkir/.local/share/nvim/site/pack/packer/start/quick-scope",
     url = "https://github.com/unblevable/quick-scope"
+  },
+  ["robotframework-vim"] = {
+    loaded = true,
+    path = "/home/drakkir/.local/share/nvim/site/pack/packer/start/robotframework-vim",
+    url = "https://github.com/mfukar/robotframework-vim"
   },
   ["telescope.nvim"] = {
     loaded = true,
