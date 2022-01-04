@@ -69,16 +69,12 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
 
   -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
-  use "p00f/nvim-ts-rainbow"
-  use "nvim-treesitter/playground"
+  use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 
+  use "mfukar/robotframework-vim"
   use "unblevable/quick-scope"
   use "machakann/vim-highlightedyank"
-  use "vim-scripts/a.vim"
+  use "nacitar/a.vim"
   use "lewis6991/gitsigns.nvim"
   use "ThePrimeagen/vim-be-good"
 

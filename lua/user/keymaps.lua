@@ -24,36 +24,43 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-
 keymap("n", "<leader>e", ":Lex 10<cr>", opts)
-
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+-- telescope nevigation
+keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>n", "<cmd>lua require('user.telescope').edit_neovim()<cr>", opts)
+keymap("n", '==', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+keymap("v", '==', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
 
 -- Insert --
+-- Easy insertion of a trailing ; or , from insert mode
+keymap("i", ";;", "<Esc>A;<Esc>", opts)
+keymap("i", ",,", "<Esc>A,<Esc>", opts)
 
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-
 -- better paste
 keymap("v", "p", '"_dP', opts)
+-- Maintain the cursor position when yanking a visual selection
+keymap("v", "y", "myy`y", opts)
+keymap("v", "Y", "myY`y", opts)
 
 -- Visual Block --
 -- Move text up and down
@@ -68,10 +75,3 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
-keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<leader>n", "<cmd>lua require('user.telescope').edit_neovim()<cr>", opts)
-keymap("n", '==', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-keymap("v", '==', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
