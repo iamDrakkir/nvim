@@ -71,6 +71,8 @@ return packer.startup(function(use)
   -- Treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 
+  use 'ggandor/lightspeed.nvim'
+
   use "mfukar/robotframework-vim"
   use "unblevable/quick-scope"
   use "machakann/vim-highlightedyank"
