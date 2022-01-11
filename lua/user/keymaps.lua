@@ -44,6 +44,7 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>n", "<cmd>lua require('user.telescope').edit_neovim()<cr>", opts)
 keymap("n", '==', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 keymap("v", '==', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
+keymap("n", "<Leader>ca", ":Telescope lsp_code_actions theme=cursor<CR>", opts)
 
 -- Insert --
 -- Easy insertion of a trailing ; or , from insert mode
