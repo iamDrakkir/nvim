@@ -24,7 +24,6 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<leader>e", ":Lex 10<cr>", opts)
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
@@ -45,6 +44,8 @@ keymap("n", "<leader>n", "<cmd>lua require('user.telescope').edit_neovim()<cr>",
 keymap("n", '==', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 keymap("v", '==', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
 keymap("n", "<Leader>ca", ":Telescope lsp_code_actions theme=cursor<CR>", opts)
+keymap("n", "<Leader>e", "<cmd>lua require'telescope'.extensions.file_browser.file_browser({path = vim.fn.expand('%:p:h')})<cr>", opts)
+
 
 -- Insert --
 -- Easy insertion of a trailing ; or , from insert mode

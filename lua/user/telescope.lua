@@ -75,29 +75,25 @@ telescope.setup {
     },
   },
   pickers = {
-    -- Your special builtin config goes in here
     buffers = {
       sort_lastused = true,
       previewer = false,
       theme = "dropdown",
       mappings = {
-        i = {
-          ["<C-d>"] = require("telescope.actions").delete_buffer,
-        },
-        n = {
-          ["<c-d>"] = require("telescope.actions").delete_buffer,
-        }
+        i = { ["<C-d>"] = actions.delete_buffer, },
+        n = { ["<c-d>"] = actions.delete_buffer, }
       }
     },
   },
   extensions = {
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
+    file_browser = {
+      theme = "dropdown",
+    }
   },
 }
+
+require("telescope").load_extension "file_browser"
+
 local M = {}
 M.edit_neovim = function()
     require("telescope.builtin").find_files({
