@@ -85,14 +85,15 @@ telescope.setup {
       }
     },
   },
-  extensions = {
-    file_browser = {
-      theme = "dropdown",
-    }
-  },
+  -- extensions = {
+  --   file_browser = {
+  --     previewer = true,
+  --     theme = "dropdown",
+  --   }
+  -- },
 }
 
-require("telescope").load_extension "file_browser"
+telescope.load_extension "file_browser"
 
 local M = {}
 M.edit_neovim = function()

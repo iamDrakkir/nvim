@@ -45,6 +45,7 @@ keymap("n", '==', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 keymap("v", '==', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
 keymap("n", "<Leader>ca", ":Telescope lsp_code_actions theme=cursor<CR>", opts)
 keymap("n", "<Leader>e", "<cmd>lua require'telescope'.extensions.file_browser.file_browser({path = vim.fn.expand('%:p:h')})<cr>", opts)
+keymap("n", "<Leader>E", "<cmd>lua require'telescope'.extensions.file_browser.file_browser()<cr>", opts)
 
 
 -- Insert --
