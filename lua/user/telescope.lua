@@ -7,7 +7,6 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-    selection_caret = " ",
     path_display = { "smart" },
     mappings = {
       i = {
@@ -102,6 +101,20 @@ M.edit_neovim = function()
         cwd = "~/.config/nvim/",
         hidden = false,
     })
+end
+
+function M.file_browser(path_in)
+  telescope.extensions.file_browser.file_browser {
+    prompt_title = "< File Browser >",
+    previewer = false,
+    path = path_in,
+    sorting_strategy = "ascending",
+    layout_strategy = "center",
+    layout_config = {
+      anchor = "W",
+      width = 40,
+    }
+  }
 end
 
 return M
