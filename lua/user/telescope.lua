@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
+local action_layout = require("telescope.actions.layout")
 
 telescope.setup {
   defaults = {
@@ -12,6 +13,7 @@ telescope.setup {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
         ["<C-p>"] = actions.cycle_history_prev,
+        ["<C-P>"] = action_layout.toggle_preview,
 
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
@@ -46,6 +48,7 @@ telescope.setup {
         ["<C-x>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
+        ["<C-P>"] = action_layout.toggle_preview,
 
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -80,16 +83,24 @@ telescope.setup {
       theme = "dropdown",
       mappings = {
         i = { ["<C-d>"] = actions.delete_buffer, },
-        n = { ["<c-d>"] = actions.delete_buffer, }
+        n = { ["<C-d>"] = actions.delete_buffer, }
       }
     },
   },
-  -- extensions = {
-  --   file_browser = {
-  --     previewer = true,
-  --     theme = "dropdown",
-  --   }
-  -- },
+  extensions = {
+    file_browser = {
+      previewer = false,
+      sorting_strategy = "ascending",
+      layout_strategy = "horizontal",
+      layout_config = {
+        prompt_position = "top",
+        anchor = "W",
+        width = 40,
+        height = 40,
+      },
+      path_display = { truncate = 1 }
+    },
+  },
 }
 
 telescope.load_extension "file_browser"
@@ -101,20 +112,6 @@ M.edit_neovim = function()
         cwd = "~/.config/nvim/",
         hidden = false,
     })
-end
-
-function M.file_browser(path_in)
-  telescope.extensions.file_browser.file_browser {
-    prompt_title = "< File Browser >",
-    previewer = false,
-    path = path_in,
-    sorting_strategy = "ascending",
-    layout_strategy = "center",
-    layout_config = {
-      anchor = "W",
-      width = 40,
-    }
-  }
 end
 
 return M
