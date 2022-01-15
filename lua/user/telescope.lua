@@ -90,6 +90,7 @@ telescope.setup {
   extensions = {
     file_browser = {
       previewer = false,
+      grouped = true,
       sorting_strategy = "ascending",
       layout_strategy = "horizontal",
       layout_config = {
