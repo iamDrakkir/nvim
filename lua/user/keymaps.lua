@@ -1,4 +1,5 @@
 local opts = { noremap = true, silent = true }
+local opts_remap = { noremap = false, silent = true }
 
 local term_opts = { silent = true }
 
@@ -47,6 +48,8 @@ keymap("n", "<leader>n", "<cmd>lua require('user.telescope').edit_neovim()<cr>",
 -- formatting
 keymap("n", '==', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 keymap("v", '==', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
+-- lightspeed 
+keymap("n", 's', '<Plug>Lightspeed_omni_s', opts_remap)
 
 -- Insert --
 -- Easy insertion of a trailing ; from insert mode
