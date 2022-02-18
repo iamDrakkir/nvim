@@ -107,16 +107,16 @@ telescope.setup {
 telescope.load_extension "file_browser"
 
 if vim.fn.has('win32') then
-  local cwd_path = "~/AppData/Local/nvim/"
+  CWD_PATH = "~/AppData/Local/nvim/"
 else
-  local cwd_path = "~/.config/nvim/"
+  CWD_PATH = "~/.config/nvim/"
 end
 
 local M = {}
 M.edit_neovim = function()
     require("telescope.builtin").find_files({
         prompt_title = "< edit neovim >",
-        cwd = cwd_path,
+        cwd = CWD_PATH,
         hidden = false,
     })
 end
