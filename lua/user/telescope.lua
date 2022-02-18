@@ -106,7 +106,7 @@ telescope.setup {
 
 telescope.load_extension "file_browser"
 
-if vim.fn.has('win32') then
+if vim.fn.has('win32') == 1 then
   CWD_PATH = "~/AppData/Local/nvim/"
 else
   CWD_PATH = "~/.config/nvim/"
