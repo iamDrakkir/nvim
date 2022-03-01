@@ -1,5 +1,6 @@
 require "user.plugins"
 require "user.options"
+require "user.neovide"
 require "user.colorscheme"
 require "user.keymaps"
 require "user.netrw"
